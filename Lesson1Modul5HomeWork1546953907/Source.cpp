@@ -218,8 +218,25 @@ void Task7()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask7\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	const int ind = 20;
+	int A[ind], i;
+
+	printf("Кол-во побед команд: \n");
+	
+	for (i = 0; i < ind; i++) A[i] = 1 + rand() % 8;
+	
+	for (i = 0; i < ind; i++)
+	{
+		printf("команда № %2d - %d \t", i + 1, A[i]);
+		if ((i+1)%3==0) printf("\n");
+	}
+	
+	printf("\n\nНомера футбольных команд имеющих меньше 3х побед в своем активе: \n\n");
+
+	for (i = 0; i < ind; i++)if (A[i] < 3) printf("- команда № %d \n", i+1);
+
 }
 
 
@@ -227,8 +244,21 @@ void Task8()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask8\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	const int ind = 14;
+	int arr[ind], i, sum=0;
+
+	for (i = 0; i < ind; i++)
+	{
+		arr[i] = 1 + rand() % 40;
+
+		printf("A[%2d] = %2d \n", i, arr[i]);
+
+		if (arr[i] % 2 == 0) sum++;
+
+	}
+	printf("\n Кол-во четных элементов в массиве = %d", sum);
 }
 
 
@@ -236,17 +266,53 @@ void Task9()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask9\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	const int ind = 12;
+	int arr[ind], i, sum=0;
+
+	for (i = 0; i < ind; i++)
+	{
+		arr[i] = 1 + rand() % 10;
+
+		sum = sum + arr[i];
+
+		printf("A[%2d] = %d \n", i, arr[i]);
+	}
+
+	arr[5] = sum / ind;
+
+	printf("\n\n");
+
+	for (i = 0; i < ind; i++)
+	{
+		if (i != 5) printf("A[%2d] = %d \n", i, arr[i]);
+		else printf("A[%2d] = %d - элемент заменен на ср ариф исх массива\n", i, arr[i]);
+	}
+
 }
 
 
 void Task10()
 {
 	SetConsoleTextAttribute(hConsole, 10);
-	printf("\n--------------------------------------------------------------------------\n\nTask9\n\n");
-	printf("\nВ разработке.... \n\n");
+	printf("\n--------------------------------------------------------------------------\n\nTask10\n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	const int ind = 15;
+	int arr[ind], i, sum = 0;
+
+	for (i = 0; i < ind; i++)
+	{
+		arr[i] = 1 + rand() % 25;
+
+		printf("A[%2d] = %2d \n", i, arr[i]);
+		
+		if (arr[i] > arr[0]) sum = sum + 1;
+	}
+
+	printf("\nКол-во элементов больших значения первого элемента: %d\n\n", sum);
+
 }
 
 
