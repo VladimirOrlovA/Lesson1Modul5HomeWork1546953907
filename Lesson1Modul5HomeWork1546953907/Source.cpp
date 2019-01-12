@@ -90,20 +90,45 @@ void Task4()
 	SetConsoleTextAttribute(hConsole, 7);
 
 	const int ind = 10;
-	int A[ind], i;
+	int A[ind], i, s, k;
 
 	for (i = 0; i < ind; i++)
 	{
 		A[i] = -5 + rand() % 10;
 		printf("A[%d]=%2d \n", i, A[i]);
 	}
-	printf("\n");
+	
+	/*
+	printf("\n Var1 \n\n");
 
 	for (i = 0; i < ind; i++) if (A[i] > 0) printf("A[%d]=%2d, элемент массива - положительное число \n", i, A[i]);
 	printf("\n\n");
 	for (i = 0; i < ind; i++) if (A[i] % 2 == 0 && A[i] != 0) printf("A[%d]=%2d, элемент массива - четное число \n", i, A[i]);
+	
+	
+	printf("\n\n Var2 \n\n");
+	
+	for (i = 0; i < 100; i++) // смотрел как работает random 
+	{
+		s = 0 + rand() % ind;
+		k = 0 + rand() % ind;
 
-	for (i = 0; i < ind; i++);
+		printf("s=%d, k=%d \n", s, k);
+	}*/
+		s = 0 + rand() % ind;
+		k = 0 + rand() % ind;
+
+		printf("\n\n Случайные индексы массива :  s=%d, k=%d \n\n", s, k);
+		
+	if(A [s] > 0) 
+		printf("A[%d]=%2d, элемент массива - положительное число \n\n", s, A[s]);
+
+	if (A[k] % 2 == 0 && A[i] != 0) 
+		printf("A[%d]=%2d, элемент массива - четное число \n\n", k, A[k]);
+	
+	if (A[s] > A[k])
+		printf("A[%d]=%2d > A[%d]=%2d \n", s, A[s], k, A[k]);
+	else printf("A[%d]=%2d < A[%d]=%2d \n", s, A[s], k, A[k]);
 
 }
 
@@ -112,8 +137,44 @@ void Task5()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask5\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	const int ind = 15;
+	int A[ind], i, b;
+
+	printf("Заполнение массива случайными числами :\n");
+	for (i = 0; i < ind; i++)
+	{
+		A[i] = 20 + rand() % 40;
+		printf("A[%2d] = %2d \n", i, A[i]);
+	}
+	
+	printf("\nУменьшение всех эл массива на 20 :\n");
+
+	for (i = 0; i < ind; i++)
+	{
+		A[i] -= 20;
+		printf("A[%2d] = %2d \n", i, A[i]);
+	}
+
+	printf("\nУмножение всех эл массива на последний элемент A[%d] = %d :\n", i-1, A[ind-1]);
+	
+	b = A[ind-1];
+
+	for(i = 0; i < ind; i++)
+	{
+		A[i] *= b;
+		printf("A[%2d] = %2d \n", i, A[i]);
+	}
+
+	b = 1 + rand() % 5;
+	printf("\nУвеличение всех эл массива на случ число B = %d :\n", b);
+	
+	for (i = 0; i < ind; i++)
+	{
+		A[i] += b;
+		printf("A[%2d] = %2d \n", i, A[i]);
+	}
 }
 
 
