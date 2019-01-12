@@ -143,6 +143,7 @@ void Task5()
 	int A[ind], i, b;
 
 	printf("Заполнение массива случайными числами :\n");
+	
 	for (i = 0; i < ind; i++)
 	{
 		A[i] = 20 + rand() % 40;
@@ -182,8 +183,34 @@ void Task6()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask6\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	const int ind = 8;
+	int A[ind], i;
+
+	printf("\n Заполнение массива случайными числами :\n\n");
+	
+	for (i = 0; i < ind; i++)
+	{
+		A[i] = -10 + rand() % 15;
+		printf("A[%2d] = %2d \n", i, A[i]);
+	}
+
+	printf("\n Неотрицательные элементы массива :\n\n");
+
+	for (i = 0; i < ind; i++)
+	{
+		if (A[i] > 0)
+			printf("A[%2d] = %2d \n", i, A[i]);
+	}
+
+	printf("\n Отрицательные элементы массива :\n\n");
+
+	for (i = 0; i < ind; i++)
+	{
+		if (A[i] < 0)
+			printf("A[%2d] = %2d \n", i, A[i]);
+	}
 }
 
 
